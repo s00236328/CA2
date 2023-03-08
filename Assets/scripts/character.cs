@@ -26,8 +26,15 @@ public class character : MonoBehaviour
     }
     public void SetState(CharacterState newState)
     {
-       
-        newState = CharacterState.idle;
+       State==newState
+           if (State == CharacterState.idle) 
+        {
+            spriteRenderer = IdleSprite; 
+        }
+           else
+        {
+            spriteRenderer = AttackSprite;
+        }
     }
 
    
