@@ -8,7 +8,7 @@ public class zombiespawner : objecthealth
     public GameObject SpawnerExplosion;
     public float SpawnTime = 5;
     public float SpawnArea = 2;
-
+    public int amount;
     public int MaxZombiesToSpawn = 10;
     int numberOfZombiesSpawned;
 
@@ -30,9 +30,12 @@ public class zombiespawner : objecthealth
     }
     public override void HandleCollision(GameObject otherObject)
     {
-        Bullet bullet = otherObject.GetComponent<Bullet>();
-        int amount = bullet.Damage;
-        SubtractHealth(amount);
+        if (otherObject.CompareTag("Bullet"))
+        {
+            Bullet bullet = otherObject.GetComponent<Bullet>();
+            amount = bullet.Damage;
+            SubtractHealth(bullet.Damage);
+        }
         base.HandleCollision(otherObject);
     }
     public override void OnDeath()

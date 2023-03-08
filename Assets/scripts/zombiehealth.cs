@@ -19,8 +19,8 @@ public class zombiehealth : objecthealth
     }
     public override void OnDeath()
     {
-        Instantiate(ZombieRemains);
-        Instantiate(ZombieExplosion);
+        Instantiate(ZombieRemains,transform.position, Quaternion.identity);
+        Instantiate(ZombieExplosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
         base.OnDeath();
     }

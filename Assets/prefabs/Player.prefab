@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1590193767500339139}
   - component: {fileID: -4492499729627601365}
   - component: {fileID: 5423815624610929471}
+  - component: {fileID: 2051251582}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -101,9 +102,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.011939377, y: -0.013024777}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.2364243
 --- !u!50 &-4492499729627601365
 Rigidbody2D:
   serializedVersion: 4
@@ -119,7 +120,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -141,12 +142,26 @@ MonoBehaviour:
   IdleSprite: {fileID: 21300000, guid: 83fd76b267ac1224bbf1d8ae25847809, type: 3}
   AttackSprite: {fileID: 21300000, guid: cc2ab2513be376749bda7877f7949a39, type: 3}
   movementSpeed: 5
-  BulletPrefab: {fileID: 4333416107401508229, guid: da32e452650863a49bb0213dcc6d1094, type: 3}
+  BulletPrefab: {fileID: 7407623833502989475, guid: da32e452650863a49bb0213dcc6d1094, type: 3}
   BulletSpawn: {fileID: 2739999938190294622}
   Ammo: 20
   MaxAmmo: 20
   RegenrateAmmoTime: 2
   AmmoRegenAmount: 1
+--- !u!114 &2051251582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3864236561171891808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3c8a43d23a3b54fa913212e06912ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 99999999
+  MaxHealth: 999999999
 --- !u!1 &3897641911392380721
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,8 +186,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3897641911392380721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.193, y: 0.293, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.3, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3046481911124061106}

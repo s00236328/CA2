@@ -6,17 +6,21 @@ public class Bullet : MonoBehaviour
 {
     public float movementSpeed = 10;
     public int Damage = 25;
+    
 
     // Start is called before the first frame update
     private void Start()
     {
         //calls clean up after 2 secs 
         Invoke("CleanUp", 2);
+        
     }
     public void SetDirection(Vector3 direction)
     {
-        transform.up = direction.normalized;
-        GetComponent<Rigidbody>().velocity = transform.up * movementSpeed;
+
+               transform.up = direction.normalized;
+        GetComponent<Rigidbody2D>().velocity = transform.up * movementSpeed;
+
     }
 
     // Update is called once per frame

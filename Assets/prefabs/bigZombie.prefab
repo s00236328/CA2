@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4337763784521153599}
   - component: {fileID: 2945149834775984886}
   - component: {fileID: -763801382966332139}
+  - component: {fileID: -1089796891933120756}
   m_Layer: 0
   m_Name: bigZombie
-  m_TagString: 'Zombie '
+  m_TagString: Zom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,3 +123,24 @@ MonoBehaviour:
   MaxHealth: 100
   ZombieRemains: {fileID: 1865471005127430650, guid: 2c5efdf4b4f874b47afaf0dd7cdfffdb, type: 3}
   ZombieExplosion: {fileID: 9144330483834562106, guid: ac019b4246b2bfc46b7e329eddb88288, type: 3}
+--- !u!50 &-1089796891933120756
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2444929131261155500}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

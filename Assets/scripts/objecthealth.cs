@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class objecthealth : MonoBehaviour
 {
-    
+   
     public int Health = 100;
     public int MaxHealth = 100;
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

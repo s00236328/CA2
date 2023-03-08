@@ -4,24 +4,27 @@ using System.ComponentModel.Design;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : objecthealth
+public class PlayerHealth :objecthealth
 {
     
     private void OnCollisionStay2D(Collision2D collision)
-    {
+    { 
         HandleCollision(collision.gameObject);
 
     }
     public override void HandleCollision(GameObject otherObject)
     {
-        if (otherObject.gameObject.CompareTag("Zombie"))
+        if (otherObject.CompareTag("Zom"))
         {
             zombie dps= otherObject.gameObject.GetComponent<zombie>();
             int amount = dps.Damage;
 
             SubtractHealth(amount);
         }
-        base.HandleCollision(otherObject);
+        
+            
+
+            base.HandleCollision(otherObject);
     }
     public override void OnDeath()
     {

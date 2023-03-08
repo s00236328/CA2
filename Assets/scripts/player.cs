@@ -22,7 +22,7 @@ public class player : character
 
 
         
-        InvokeRepeating("RegenrateAmmmo", RegenrateAmmoTime, RegenrateAmmoTime);
+        InvokeRepeating("RegenerateAmmo", RegenrateAmmoTime, RegenrateAmmoTime);
         base.Start();
            
         
@@ -38,7 +38,8 @@ public class player : character
         mousePosition.z = 0;
 
         transform.up = (mousePosition - transform.position);
-        if (Input.GetButtonDown("Fire2"))
+
+        if (Input.GetButton("Fire2"))
         {
             SetState(CharacterState.Attack);
             if (Input.GetButtonDown("Fire1"))
@@ -60,9 +61,8 @@ public class player : character
     }
     void Fire()
     {
-        Bullet inst = Instantiate(BulletPrefab, transform.position, Quaternion.identity);
+        Bullet inst = Instantiate(BulletPrefab, BulletSpawn.transform.position, Quaternion.identity);
         inst.SetDirection(transform.up);
-       
         Ammo--;
         
     }
