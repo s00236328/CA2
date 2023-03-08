@@ -11,41 +11,25 @@ public enum CharacterState
 public class character : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float movementSpeed;
-    protected Vector2 velocity;
+    public CharacterState State;
+    public Sprite IdleSprite;
+    public Sprite AttackSprite;
+    public float movementSpeed = 5;
     protected Rigidbody2D body;
-    protected Animator animator;
-
-
+    
     SpriteRenderer spriteRenderer;
     protected virtual void Start()
     {
       body= GetComponent<Rigidbody2D>();
-        animator= GetComponent<Animator>();
+        spriteRenderer= GetComponent<SpriteRenderer>();
+        SetState(newState:CharacterState.idle);
+    }
+    public void SetState(CharacterState newState)
+    {
+       
+        newState = CharacterState.idle;
     }
 
-    // Update is called once per frame
-    protected virtual void Update()
-    {
-        if (velocity.x > 0)
-        {
-            animator.Play("Right");
-        }
-        else if (velocity.x < 0)
-        {
-            animator.Play("Left");
-        }
-        else if (velocity.y > 0)
-        {
-            animator.Play("Up");
-        }
-        else if (velocity.y < 0)
-        {
-            animator.Play("Down");
-        }
-        else
-        {
-            animator.Play("Idle");
-        }
-    }
+   
+    
 }

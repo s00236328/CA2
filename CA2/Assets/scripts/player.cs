@@ -5,18 +5,73 @@ using UnityEngine;
 public class player : character
 {
     float hor, ver;
-    protected override void Update()
+    
+    Vector3 mousePosition;
+    Vector3 direction;
+    //changed from type bullet to game object bulletprefab
+    public GameObject BulletPrefab;
+    public Transform BulletSpawn;
+
+    public int Ammo = 20;
+    public int MaxAmmo = 20;
+    public float RegenrateAmmoTime = 2;
+    public int AmmoRegenAmount=1;
+
+    protected override void Start()
+    {
+
+
+        BulletPrefab= GetComponent<GameObject>();
+        InvokeRepeating("RegenrateAmmmo", RegenrateAmmoTime, RegenrateAmmoTime);
+        base.Start();
+           
+        
+    }
+    private void Update()
     {
         hor = Input.GetAxisRaw("Horizontal");
         ver = Input.GetAxisRaw("Vertical");
-        velocity.x = hor * movementSpeed;
-        velocity.y = ver * movementSpeed;
-        body.velocity = velocity;
-        //call update method in the character class                                                            
-        base.Update();
-        
+        direction.x = hor * movementSpeed;
+        direction.y = ver * movementSpeed;
+        body.velocity = direction;
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0;
+
+        transform.up = (mousePosition - transform.position);
+        if (Input.GetButtonDown("Fire2"))
+        {
+            SetState(CharacterState.Attack);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                if (Ammo > 1)
+                {
+                    Fire();
+                }
+            }
+        }
+        else
+        {
+            SetState(CharacterState.idle);
+        }
+    }
+    private void FixedUpdate()
+    {
+            body.MovePosition(transform.position +new Vector3(hor, ver, 0)* movementSpeed*Time.deltaTime);
+    }
+    void Fire()
+    {
+        GameObject bullet = Instantiate(BulletPrefab, transform.position, Quaternion.identity);
+        Rigidbody2D body = bullet.GetComponent<Rigidbody2D>();
         
         
     }
+     void RegenerateAmmo()
+    {
+        if (Ammo < MaxAmmo)
+        {
+            Ammo = Ammo + AmmoRegenAmount;
+        }
+    }
+
 
 }
