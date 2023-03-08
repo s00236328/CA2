@@ -22,7 +22,7 @@ public class character : MonoBehaviour
     {
       body= GetComponent<Rigidbody2D>();
         spriteRenderer= GetComponent<SpriteRenderer>();
-        SetState(newState:CharacterState.idle);
+        SetState(State);
     }
     public void SetState(CharacterState newState)
     {

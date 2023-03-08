@@ -9,7 +9,7 @@ public class player : character
     Vector3 mousePosition;
     Vector3 direction;
     //changed from type bullet to game object bulletprefab
-    public GameObject BulletPrefab;
+    public Bullet BulletPrefab;
     public Transform BulletSpawn;
 
     public int Ammo = 20;
@@ -21,7 +21,7 @@ public class player : character
     {
 
 
-        BulletPrefab= GetComponent<GameObject>();
+        
         InvokeRepeating("RegenrateAmmmo", RegenrateAmmoTime, RegenrateAmmoTime);
         base.Start();
            
@@ -43,7 +43,7 @@ public class player : character
             SetState(CharacterState.Attack);
             if (Input.GetButtonDown("Fire1"))
             {
-                if (Ammo > 1)
+                if (Ammo > 0)
                 {
                     Fire();
                 }
@@ -56,20 +56,25 @@ public class player : character
     }
     private void FixedUpdate()
     {
-            body.MovePosition(transform.position +new Vector3(hor, ver, 0)* movementSpeed*Time.deltaTime);
+            body.MovePosition(transform.position + new Vector3(hor, ver, 0)* movementSpeed*Time.deltaTime);
     }
     void Fire()
     {
-        GameObject bullet = Instantiate(BulletPrefab, transform.position, Quaternion.identity);
-        Rigidbody2D body = bullet.GetComponent<Rigidbody2D>();
-        
+        Bullet inst = Instantiate(BulletPrefab, transform.position, Quaternion.identity);
+        inst.SetDirection(transform.up);
+       
+        Ammo--;
         
     }
      void RegenerateAmmo()
     {
         if (Ammo < MaxAmmo)
         {
-            Ammo = Ammo + AmmoRegenAmount;
+            Ammo += AmmoRegenAmount;
+        }
+        if (Ammo > MaxAmmo) 
+        { 
+            Ammo = MaxAmmo; 
         }
     }
 

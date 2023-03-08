@@ -30,10 +30,15 @@ public class zombiespawner : objecthealth
     }
     public override void HandleCollision(GameObject otherObject)
     {
+        Bullet bullet = otherObject.GetComponent<Bullet>();
+        int amount = bullet.Damage;
+        SubtractHealth(amount);
         base.HandleCollision(otherObject);
     }
     public override void OnDeath()
     {
+        Instantiate(SpawnerExplosion);
+        Destroy(gameObject);
         base.OnDeath();
     }
 }
