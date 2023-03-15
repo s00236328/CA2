@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   State: 0
-  IdleSprite: {fileID: 21300000, guid: 6827b4a51990faa4aa58c69b6fd6ed24, type: 3}
+  IdleSprite: {fileID: 21300000, guid: 24a19d9f89a33b441a020ccb8edbee72, type: 3}
   AttackSprite: {fileID: 21300000, guid: c8cefa710f618fe439d75ca49eeba43c, type: 3}
   movementSpeed: 5
   Damage: 10
@@ -122,7 +122,7 @@ MonoBehaviour:
   Health: 100
   MaxHealth: 100
   ZombieRemains: {fileID: 1865471005127430650, guid: 2c5efdf4b4f874b47afaf0dd7cdfffdb, type: 3}
-  ZombieExplosion: {fileID: 9144330483834562106, guid: ac019b4246b2bfc46b7e329eddb88288, type: 3}
+  ZombieExplosion: {fileID: 3633768985383274410, guid: 5965c03d0d62ba04a95a7028480d6b72, type: 3}
 --- !u!50 &-1089796891933120756
 Rigidbody2D:
   serializedVersion: 4

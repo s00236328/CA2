@@ -101,9 +101,10 @@ MonoBehaviour:
   Health: 500
   MaxHealth: 500
   ZombiePrefab: {fileID: 5200300262811274563, guid: 35a8e1eb8a430d6448a7a2d196c1405c, type: 3}
-  SpawnerExplosion: {fileID: 9144330483834562106, guid: ac019b4246b2bfc46b7e329eddb88288, type: 3}
+  SpawnerExplosion: {fileID: 3633768985383274410, guid: 5965c03d0d62ba04a95a7028480d6b72, type: 3}
   SpawnTime: 5
   SpawnArea: 2
+  amount: 0
   MaxZombiesToSpawn: 10
 --- !u!58 &8851426312641436945
 CircleCollider2D:

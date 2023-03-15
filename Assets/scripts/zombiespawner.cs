@@ -5,7 +5,7 @@ using UnityEngine;
 public class zombiespawner : objecthealth
 {
     public GameObject ZombiePrefab;
-    public GameObject SpawnerExplosion;
+    public GameObject ZombieExplosion;
     public float SpawnTime = 5;
     public float SpawnArea = 2;
     public int amount;
@@ -40,7 +40,7 @@ public class zombiespawner : objecthealth
     }
     public override void OnDeath()
     {
-        Instantiate(SpawnerExplosion);
+        Instantiate(ZombieExplosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
         base.OnDeath();
     }

@@ -160,4 +160,4 @@ MonoBehaviour:
   Health: 25
   MaxHealth: 25
   ZombieRemains: {fileID: 1865471005127430650, guid: 2c5efdf4b4f874b47afaf0dd7cdfffdb, type: 3}
-  ZombieExplosion: {fileID: 9144330483834562106, guid: ac019b4246b2bfc46b7e329eddb88288, type: 3}
+  ZombieExplosion: {fileID: 3633768985383274410, guid: 5965c03d0d62ba04a95a7028480d6b72, type: 3}
